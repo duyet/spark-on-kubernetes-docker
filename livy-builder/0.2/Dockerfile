@@ -10,7 +10,7 @@ RUN apt-get -qq update && \
     apt-get -qq install python3 python3-pip python3-dev && \
     apt-get -qq install libkrb5-dev && \
     apt-get -qq remove python-setuptools && \
-    python3 -m pip -q install --upgrade "pip < 10.0.0" "setuptools < 36" && \
+    # python3 -m pip -q install --upgrade "pip < 10.0.0" "setuptools < 36" && \
     python3 -m pip -q install cloudpickle && \
     pip3 -q install "requests >= 2.10.0" pytest flaky requests-kerberos && \
     apt-get -qq clean && \
