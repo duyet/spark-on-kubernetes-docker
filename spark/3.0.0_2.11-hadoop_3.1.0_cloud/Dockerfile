@@ -1,5 +1,5 @@
 ### Builder Container
-FROM sasnouskikh/livy-builder:0.2 as build
+FROM duyetdev/livy-builder:0.2 as build
 
 RUN cd / && \
     git clone https://github.com/apache/spark.git --branch v3.0.0-preview2 --single-branch && \
