@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -qq update && \
     apt-get -qq upgrade -y && \
-    apt-get -qq install -y software-properties-common python-software-properties debconf-utils && \
+    apt-get -qq install -y software-properties-common software-properties-common debconf-utils && \
     apt-get -qq install -y openjdk-8-jdk && \
     apt-get -qq install r-base && \
     apt-get -qq install python-pip python3-pip python-dev && \
