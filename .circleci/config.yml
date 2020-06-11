@@ -15,8 +15,8 @@ jobs:
         environment:
           DOCKERHUB_REPO: duyetdev
         command: |
-          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
           set -x
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
           for repo in "spark-base" "spark" "livy" "livy-spark" "jupyter"; do
             for script in $(find ./$repo/ -name build.sh); do
               if [ -n $script ]; then 
