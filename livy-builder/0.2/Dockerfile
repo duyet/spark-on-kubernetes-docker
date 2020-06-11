@@ -4,18 +4,14 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -qq update && \
     apt-get -qq upgrade -y && \
-    apt-get -qq install -y software-properties-common software-properties-common debconf-utils && \
+    apt-get -qq install -y software-properties-common debconf-utils && \
     apt-get -qq install -y openjdk-8-jdk && \
     apt-get -qq install r-base && \
-    apt-get -qq install python-pip python3-pip python-dev && \
+    apt-get -qq install python3 python3-pip python3-dev && \
     apt-get -qq install libkrb5-dev && \
     apt-get -qq remove python-setuptools && \
-    pip2 -q install --upgrade "pip < 10.0.0" "setuptools < 36" && \
     python3 -m pip -q install --upgrade "pip < 10.0.0" "setuptools < 36" && \
-    pip2 -q install codecov cloudpickle && \
     python3 -m pip -q install cloudpickle && \
-    pip2 -q install -U setuptools && \
-    pip2 -q install "requests >= 2.10.0" pytest flaky flake8 requests-kerberos && \
     pip3 -q install "requests >= 2.10.0" pytest flaky requests-kerberos && \
     apt-get -qq clean && \
     apt-get -qq install -y git wget && \
