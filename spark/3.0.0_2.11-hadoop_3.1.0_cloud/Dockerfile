@@ -29,7 +29,7 @@ RUN set -ex && \
     chgrp root /etc/passwd && chmod ug+rw /etc/passwd && \
     rm -rf /var/cache/apt/*
 
-ENV SPARK_VERSION   3.0.0
+ENV SPARK_VERSION   3.0.0-preview2
 ENV HADOOP_VERSION  hadoop-3.1.0-cloud
 ENV SCALA_VERSION   2.11
 
