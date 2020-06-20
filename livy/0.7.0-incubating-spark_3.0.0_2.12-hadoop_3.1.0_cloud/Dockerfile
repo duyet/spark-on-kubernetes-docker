@@ -1,4 +1,4 @@
-ARG SPARK_BASE=duyetdev/livy-spark:0.7.0-incubating-spark_3.0.0_2.12-hadoop_3.1.0_cloud
+ARG SPARK_BASE=duyetdev/livy-spark:0.7.0-incubating-spark_3.0.0_2.11-hadoop_3.1.0_cloud
 
 FROM $SPARK_BASE
 
