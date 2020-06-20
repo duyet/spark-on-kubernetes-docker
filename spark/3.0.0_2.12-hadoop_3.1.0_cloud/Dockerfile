@@ -2,15 +2,15 @@
 FROM duyetdev/livy-builder:0.2 as build
 
 RUN cd / && \
-    git clone https://github.com/apache/spark.git --branch v3.0.0-preview2 --single-branch && \
+    git clone https://github.com/apache/spark.git --branch v3.0.0 --single-branch && \
     cd /spark && \
     dev/make-distribution.sh \
-        --name hadoop-3.1.0-cloud-scala-2.11 --pip --tgz -DskipTests \
+        --name hadoop-3.1.0-cloud-scala-2.12 --pip --tgz -DskipTests \
         -Phadoop-3.1 \
         -Phadoop-cloud \
         -Pkubernetes \
         -Phive && \
-    cp spark-3.0.0-preview2-bin-hadoop-3.1.0-cloud-scala-2.11.tgz /
+    cp spark-3.0.0-bin-hadoop-3.1.0-cloud-scala-2.12.tgz /
 
 ### Final Container
 FROM openjdk:8-jdk-slim
@@ -29,9 +29,9 @@ RUN set -ex && \
     chgrp root /etc/passwd && chmod ug+rw /etc/passwd && \
     rm -rf /var/cache/apt/*
 
-ENV SPARK_VERSION   3.0.0-preview2
+ENV SPARK_VERSION   3.0.0
 ENV HADOOP_VERSION  hadoop-3.1.0-cloud
-ENV SCALA_VERSION   2.11
+ENV SCALA_VERSION   2.12
 
 ENV SPARK_HOME      /opt/spark
 ENV SPARK_CONF_DIR  $SPARK_HOME/conf
