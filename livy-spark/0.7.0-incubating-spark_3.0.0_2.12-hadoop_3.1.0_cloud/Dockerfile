@@ -1,5 +1,5 @@
 ARG SPARK_BASE=duyetdev/spark:3.0.0_2.12-hadoop_3.1.0_cloud
-ARG LIVY_BUILDER=duyetdev/livy-builder:0.2
+ARG LIVY_BUILDER=sasnouskikh/livy-builder:0.2
 
 ### Livy Builder Container
 FROM $LIVY_BUILDER as build
